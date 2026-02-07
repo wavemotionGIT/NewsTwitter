@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum StoryStatus {
+  watching
+  draft
+  published
+}
+
+enum JobStatus {
+  running
+  success
+  failed
+}
+
+model Story {
+  id             String      @id @default(cuid())
+  status         StoryStatus
+  title          String
+  summary        String
+  topic          String
+  createdAt      DateTime    @default(now())
+  publishedAt    DateTime?
+  updatedAt      DateTime    @updatedAt
+  embedding      String?
+  similarityHash String?
+  lastTweetId    String?
+  updateCount    Int         @default(0)
+  confidence     Float       @default(0)
+  sources        Source[]
+
+  @@index([status, createdAt])
+}
+
+model Source {
+  id          String   @id @default(cuid())
+  storyId     String
+  url         String
+  domain      String
+  publisher   String
+  title       String
+  publishedAt DateTime
+  snippet     String?
+  fetchedAt   DateTime
+  accessible  Boolean  @default(true)
+  story       Story    @relation(fields: [storyId], references: [id], onDelete: Cascade)
+
+  @@index([domain])
+  @@unique([storyId, url])
+}
+
+model JobRun {
+  id        String    @id @default(cuid())
+  startedAt DateTime
+  finishedAt DateTime?
+  status    JobStatus
+  metrics   Json
+  logs      Json
+
+  @@index([status, startedAt])
+}
