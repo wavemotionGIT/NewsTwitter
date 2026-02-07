@@ -1,0 +1,64 @@
+sources:
+  - name: Federal Reserve
+    url: https://www.federalreserve.gov/feeds/press_all.xml
+    category: primary
+  - name: BLS
+    url: https://www.bls.gov/feeds/news.release.rss
+    category: primary
+  - name: BEA
+    url: https://www.bea.gov/rss.xml
+    category: primary
+  - name: U.S. Treasury
+    url: https://home.treasury.gov/rss/press-releases.xml
+    category: primary
+  - name: SEC Press
+    url: https://www.sec.gov/rss/press.xml
+    category: primary
+  - name: ECB Press
+    url: https://www.ecb.europa.eu/rss/press.html
+    category: primary
+  - name: Eurostat
+    url: https://ec.europa.eu/eurostat/rss/news.xml
+    category: primary
+  - name: Bank of England
+    url: https://www.bankofengland.co.uk/rss/news
+    category: primary
+  - name: SNB
+    url: https://www.snb.ch/en/rss/recent_news
+    category: primary
+  - name: BIS
+    url: https://www.bis.org/rss/all_rss.xml
+    category: primary
+  - name: IMF
+    url: https://www.imf.org/en/News/RSS
+    category: primary
+  - name: CFTC
+    url: https://www.cftc.gov/RSS/PressReleases.xml
+    category: regulator
+  - name: FINMA
+    url: https://www.finma.ch/en/news/rss/
+    category: regulator
+  - name: Bitcoin Core Releases
+    url: https://github.com/bitcoin/bitcoin/releases.atom
+    category: crypto_primary
+  - name: Ethereum Foundation
+    url: https://blog.ethereum.org/feed.xml
+    category: crypto_primary
+  - name: Coinbase Blog
+    url: https://www.coinbase.com/blog/rss
+    category: crypto_primary
+  - name: Kraken Blog
+    url: https://blog.kraken.com/feed
+    category: crypto_primary
+  - name: CoinDesk
+    url: https://www.coindesk.com/arc/outboundfeeds/rss/
+    category: secondary
+  - name: Cointelegraph
+    url: https://cointelegraph.com/rss
+    category: secondary
+  - name: MarketWatch
+    url: https://feeds.marketwatch.com/marketwatch/topstories/
+    category: secondary
+  - name: Investing.com
+    url: https://www.investing.com/rss/news.rss
+    category: secondary
